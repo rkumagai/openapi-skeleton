@@ -1,0 +1,2 @@
+# openapi-skeleton
+OpenAPI skeleton
