@@ -1,0 +1,36 @@
+get:
+  summary: Dogs
+  operationId: Animals_Dogs
+  description: |
+    Dogs Xxxxx
+  tags:
+    - animals
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: Animals_Dogs
+          examples:
+            example:
+              $ref: '../../../examples/animals-dogs-example-1.yaml'
+components:
+  schemas:
+    Animals_Dogs:
+      type: object
+      properties:
+        dogs:
+          type: array
+          items:
+            $ref: Animals_Dogs_Dog
+    Animals_Dogs_Dog:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+      required:
+        - id
+        - name

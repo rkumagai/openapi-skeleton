@@ -1,0 +1,50 @@
+openapi: 3.0.0
+info:
+  contact:
+    email: xxx@xxxxx.xx
+    name: XXXX Service Auth
+    url: https://xxx..jp
+  description: XXXX Service Auth
+  termsOfService: https://xxxx.xx/terms
+  title: XXXX Auth
+  version: "1.0"
+servers:
+- description: development
+  url: http://localhost:3000
+tags:
+- description: Auth
+  name: auth
+paths:
+  /auth/token:
+    get:
+      description: |
+        Auths Xxxxx
+      operationId: Token
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                example:
+                  $ref: '#/components/examples/auth-token-example-1'
+              schema:
+                $ref: '#/components/schemas/Auth_Token'
+          description: OK
+      summary: Token
+      tags:
+      - auth
+components:
+  examples:
+    auth-token-example-1:
+      value:
+        token: xxxxxxxxxxxxx
+  schemas:
+    Auth_Token:
+      example:
+        token: token
+      properties:
+        token:
+          type: string
+      required:
+      - token
+      type: object

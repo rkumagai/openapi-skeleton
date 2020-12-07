@@ -1,0 +1,8 @@
+value:
+  dogs: [
+    {
+      id: 1,
+      name: taro
+    }
+  ]
+

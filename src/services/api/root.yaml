@@ -1,0 +1,28 @@
+openapi: 3.0.0
+info:
+  title: XXXX API
+  description: "XXXX Service API"
+  version: '1.0'
+  contact:
+    name: XXXX Service API
+    url: 'https://xxx..jp'
+    email: xxx@xxxxx.xx
+  termsOfService: 'https://xxxx.xx/terms'
+servers:
+  - url: 'http://localhost:3000'
+    description: development
+tags:
+  # Domains
+  - name: animals
+    description: Animals
+  - name: fruits
+    description: Fruits
+paths:
+  # Animals
+  /animals/cats:
+    $ref: ./paths/animals/cats.yaml
+  /animals/dogs:
+    $ref: ./paths/animals/dogs.yaml
+  # Fruits
+  /fruits/apples:
+    $ref: ./paths/fruits/apples.yaml

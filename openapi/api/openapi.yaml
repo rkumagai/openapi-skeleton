@@ -1,0 +1,169 @@
+openapi: 3.0.0
+info:
+  contact:
+    email: xxx@xxxxx.xx
+    name: XXXX Service API
+    url: https://xxx..jp
+  description: XXXX Service API
+  termsOfService: https://xxxx.xx/terms
+  title: XXXX API
+  version: "1.0"
+servers:
+- description: development
+  url: http://localhost:3000
+tags:
+- description: 動物
+  name: animals
+- description: 果物
+  name: fruits
+paths:
+  /animals/cats:
+    get:
+      description: |
+        Cats Xxxxx
+      operationId: Animals_Cats
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                example:
+                  $ref: '#/components/examples/animals-cats-example-1'
+              schema:
+                $ref: '#/components/schemas/Animals_Cats'
+          description: OK
+      summary: Cats
+      tags:
+      - animals
+  /animals/dogs:
+    get:
+      description: |
+        Dogs Xxxxx
+      operationId: Animals_Dogs
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                example:
+                  $ref: '#/components/examples/animals-dogs-example-1'
+              schema:
+                $ref: '#/components/schemas/Animals_Dogs'
+          description: OK
+      summary: Dogs
+      tags:
+      - animals
+  /fruits/apples:
+    get:
+      description: |
+        Apples Xxxxx
+      operationId: Animals_Apples
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                example:
+                  $ref: '#/components/examples/fruits-apples-example-1'
+              schema:
+                $ref: '#/components/schemas/Animals_Apples'
+          description: OK
+      summary: Apples
+      tags:
+      - fruits
+components:
+  examples:
+    animals-cats-example-1:
+      value:
+        cats:
+        - id: 1
+          name: taro
+    animals-dogs-example-1:
+      value:
+        dogs:
+        - id: 1
+          name: taro
+    fruits-apples-example-1:
+      value:
+        apples:
+        - id: 1
+          name: fuji
+  schemas:
+    Animals_Cats:
+      example:
+        cats:
+        - name: name
+          id: 0
+        - name: name
+          id: 0
+      properties:
+        cats:
+          items:
+            $ref: '#/components/schemas/Animals_Cats_Cat'
+          type: array
+      type: object
+    Animals_Cats_Cat:
+      example:
+        name: name
+        id: 0
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+      required:
+      - id
+      - name
+      type: object
+    Animals_Dogs:
+      example:
+        dogs:
+        - name: name
+          id: 0
+        - name: name
+          id: 0
+      properties:
+        dogs:
+          items:
+            $ref: '#/components/schemas/Animals_Dogs_Dog'
+          type: array
+      type: object
+    Animals_Dogs_Dog:
+      example:
+        name: name
+        id: 0
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+      required:
+      - id
+      - name
+      type: object
+    Animals_Apples:
+      example:
+        apples:
+        - name: name
+          id: 0
+        - name: name
+          id: 0
+      properties:
+        apples:
+          items:
+            $ref: '#/components/schemas/Animals_Apples_Apple'
+          type: array
+      type: object
+    Animals_Apples_Apple:
+      example:
+        name: name
+        id: 0
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+      required:
+      - id
+      - name
+      type: object

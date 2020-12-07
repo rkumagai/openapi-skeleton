@@ -1,0 +1,36 @@
+get:
+  summary: Apples
+  operationId: Animals_Apples
+  description: |
+    Apples Xxxxx
+  tags:
+    - fruits
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: Animals_Apples
+          examples:
+            example:
+              $ref: '../../../examples/fruits-apples-example-1.yaml'
+components:
+  schemas:
+    Animals_Apples:
+      type: object
+      properties:
+        apples:
+          type: array
+          items:
+            $ref: Animals_Apples_Apple
+    Animals_Apples_Apple:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+      required:
+        - id
+        - name

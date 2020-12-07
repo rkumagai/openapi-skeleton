@@ -1,0 +1,26 @@
+get:
+  summary: Token
+  operationId: Token
+  description: |
+    Auths Xxxxx
+  tags:
+    - auth
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: Auth_Token
+          examples:
+            example:
+              $ref: '../../../examples/auth-token-example-1.yaml'
+components:
+  schemas:
+    Auth_Token:
+      type: object
+      properties:
+        token:
+          type: string
+      required:
+        - token

@@ -1,0 +1,36 @@
+get:
+  summary: Cats
+  operationId: Animals_Cats
+  description: |
+    Cats Xxxxx
+  tags:
+    - animals
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: Animals_Cats
+          examples:
+            example:
+              $ref: '../../../examples/animals-cats-example-1.yaml'
+components:
+  schemas:
+    Animals_Cats:
+      type: object
+      properties:
+        cats:
+          type: array
+          items:
+            $ref: Animals_Cats_Cat
+    Animals_Cats_Cat:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+      required:
+        - id
+        - name

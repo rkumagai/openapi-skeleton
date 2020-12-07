@@ -1,0 +1,8 @@
+value:
+  apples: [
+    {
+      id: 1,
+      name: fuji
+    }
+  ]
+
