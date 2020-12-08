@@ -12,9 +12,9 @@ servers:
 - description: development
   url: http://localhost:3000
 tags:
-- description: 動物
+- description: Animals
   name: animals
-- description: 果物
+- description: Fruits
   name: fruits
 paths:
   /animals/cats:
